@@ -1,0 +1,10 @@
+version: '3'
+services:
+  myApp:
+    build:
+      dockerfile: ./Dockerfile
+    image: "code-img"
+    volumes:
+      - D:\User\mchittiveri\git\spring-boot-rest-example\target:/app
+    ports:
+      - "8092:8092"
