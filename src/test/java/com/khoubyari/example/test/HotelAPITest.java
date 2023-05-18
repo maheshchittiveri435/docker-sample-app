@@ -27,7 +27,7 @@ public class HotelAPITest {
     @Test
     public void createHotel() throws Exception {
         try {
-            URL url = new URL("http://localhost:8092/example/v1/hotels");
+            URL url = new URL("http://localhost:8088/example/v1/hotels");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");

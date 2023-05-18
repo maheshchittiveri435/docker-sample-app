@@ -7,4 +7,4 @@ services:
     volumes:
       - D:\User\mchittiveri\git\spring-boot-rest-example\target:/app
     ports:
-      - "8092:8092"
+      - "8088:8088"

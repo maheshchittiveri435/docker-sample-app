@@ -8,7 +8,7 @@ WORKDIR /app
 COPY jacocoagent.jar /app
 
 # Copy the jacococli.jar file to the container
-COPY jacococli.jar .
+COPY src/main/resources/application.yml /app/application.yml
 
 # Copy the application JAR into the container
 COPY target/Application-1.0.jar /app
@@ -16,5 +16,7 @@ COPY target/Application-1.0.jar /app
 # Mount a volume to store jacoco on the host machine
 VOLUME /app
 
-# Run the application with the JaCoCo agent enabled
-CMD ["java", "-javaagent:/app/jacocoagent.jar=destfile=/app/jacoco.exec", "-jar", "/app/Application-1.0.jar"]
+# Expose the desired port
+EXPOSE 8088
+
+CMD java -javaagent:jacocoagent.jar=destfile=target/jacoco.exec -jar -Dserver.port=8088 Application-1.0.jar
