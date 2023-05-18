@@ -2,7 +2,7 @@ Commands:
 1. mvn clean package -DskipTests
 2. Copy-Item -Path "jacocoagent.jar" -Destination "target/"
 3. docker-compose build --no-cache --pull
-4. docker run -it --rm -p 8092:8093 --name "code-cov-container" -v D:\User\mchittiveri\git\spring-boot-rest-example\target:/app code-img
+4. docker run --rm -p 8088:8088 --name "code-cov-container" -v D:\User\mchittiveri\git\spring-boot-rest-example\target:/app code-img
 5. mvn test -Dtest=com.khoubyari.example.test.HotelAPITest.java
 6. docker stop code-cov-container
 7. Remove-Item -Recurse -Force target\\classes
