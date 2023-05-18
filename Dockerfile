@@ -19,4 +19,5 @@ VOLUME /app
 # Expose the desired port
 EXPOSE 8088
 
-CMD java -javaagent:jacocoagent.jar=destfile=target/jacoco.exec -jar -Dserver.port=8088 Application-1.0.jar
+# Run the application with the JaCoCo agent enabled
+CMD ["java", "-javaagent:/app/jacocoagent.jar=destfile=/app/jacoco.exec", "-jar", "/app/Application-1.0.jar", "-Dserver.port=8088"]
